@@ -1,4 +1,4 @@
-# maybe-lazy-load
+# skip-server-render
 
 A configurable lazy component for React.
 
@@ -7,7 +7,7 @@ A configurable lazy component for React.
 ## Installation
 
 ```
-npm install @walmart/maybe-lazy-load
+npm install @walmart/skip-server-render
 ```
 
 ## Development Guide

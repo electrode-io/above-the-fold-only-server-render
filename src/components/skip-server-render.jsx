@@ -4,30 +4,30 @@
 import React from "react";
 
 /**
-A component for configurable lazy loading.
+A component for configurable skip loading.
 @examples
 ```jsx
-<MaybeLazyLoad lazy={true}>
+<SkipServerRender skip={true}>
   <Footer />
-</MaybeLazyLoad>
+</SkipServerRender>
 ```
-@component MaybeLazyLoad
-@import {MaybeLazyLoad}
+@component SkipServerRender
+@import {SkipServerRender}
 @playground
-MaybeLazyLoad
+SkipServerRender
 ```
-<MaybeLazyLoad lazy={true}>
+<SkipServerRender skip={true}>
   <Footer />
-</MaybeLazyLoad>
+</SkipServerRender>
 ```
 @returns {ReactElement} The rendered component
 */
 
-class MaybeLazyLoad extends React.Component {
+class SkipServerRender extends React.Component {
   constructor(props): void {
     super(props);
 
-    this.state = { visible: !props.lazy };
+    this.state = { visible: !props.skip };
     this._onShow = this._onShow.bind(this);
   }
 
@@ -46,39 +46,35 @@ class MaybeLazyLoad extends React.Component {
 
   _onShow(): void {
     this.setState({ visible: true });
-    this.props.onShow();
   }
 
   render(): ReactElement {
-    const {children, height, width} = this.props;
+    const {children, className, height, width} = this.props;
     const {visible} = this.state;
     const style = {height, width};
 
-    return visible ? (
-      React.Children.only(children)
-    ) : (
-      <div style={style}></div>
+    return visible ? children : (
+      <div className={className} style={style}></div>
     );
   }
 }
 
-MaybeLazyLoad.propTypes = {
+SkipServerRender.propTypes = {
   children: React.PropTypes.node,
+  className: React.PropTypes.string,
   height: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number
   ]),
-  lazy: React.PropTypes.bool,
-  onShow: React.PropTypes.func,
+  skip: React.PropTypes.bool,
   width: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number
   ])
 };
 
-MaybeLazyLoad.defaultProps = {
-  lazy: true,
-  onShow: () => {}
+SkipServerRender.defaultProps = {
+  skip: false
 };
 
-export default MaybeLazyLoad;
+export default SkipServerRender;

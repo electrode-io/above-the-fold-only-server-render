@@ -1,6 +1,0 @@
-<div>
-  <div style={{height: "4000px"}}></div>
-  <MaybeLazyLoad lazy={true}>
-    <div>This should lazy load!</div>
-  </MaybeLazyLoad>
-</div>

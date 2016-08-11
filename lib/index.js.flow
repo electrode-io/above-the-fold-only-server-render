@@ -1,1 +1,1 @@
-export { default as MaybeLazyLoad } from "./components/maybe-lazy-load";
+export { default as SkipServerRender } from "./components/skip-server-render";

@@ -1,5 +1,78 @@
 {
-  "library": "@walmart/maybe-lazy-load",
-  "description": "A configurable lazy component for React.",
-  "components": []
+  "library": "@walmart/electrode-skip-server-render",
+  "description": "A React component that optionally skips server rendering.",
+  "components": [
+    {
+      "methods": [
+        {
+          "name": "_onShow",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": {
+            "type": {
+              "name": "void"
+            }
+          }
+        }
+      ],
+      "props": {
+        "height": {
+          "type": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": ""
+        },
+        "skip": {
+          "type": {
+            "name": "bool"
+          },
+          "required": false,
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          },
+          "description": ""
+        },
+        "width": {
+          "type": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": ""
+        }
+      },
+      "fileName": "./src/components/skip-server-render.jsx",
+      "description": "A component for configurable skip loading.",
+      "examples": "```jsx\n<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n```",
+      "component": "SkipServerRender",
+      "import": "{SkipServerRender}",
+      "playground": [
+        {
+          "title": "SkipServerRender",
+          "flags": {},
+          "code": "<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n"
+        }
+      ],
+      "returns": "The rendered component",
+      "hasProps": true
+    }
+  ]
 }

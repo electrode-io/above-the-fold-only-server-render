@@ -1,16 +1,16 @@
 {
-  "name": "@walmart/maybe-lazy-load",
+  "name": "@walmart/electrode-skip-server-render",
   "version": "1.0.0",
-  "description": "A configurable lazy component for React.",
+  "description": "A React component that optionally skips server rendering.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://gecgithub01.walmart.com/electrode/maybe-lazy-load.git"
+    "url": "https://gecgithub01.walmart.com/electrode/skip-server-render.git"
   },
   "bugs": {
-    "url": "https://gecgithub01.walmart.com/electrode/maybe-lazy-load/issues"
+    "url": "https://gecgithub01.walmart.com/electrode/skip-server-render/issues"
   },
-  "homepage": "https://gecgithub01.walmart.com/electrode/maybe-lazy-load",
+  "homepage": "https://gecgithub01.walmart.com/electrode/skip-server-render",
   "scripts": {
     "demo": "builder run generate && builder run server-dev",
     "demo-iso": "builder run dev-iso",
