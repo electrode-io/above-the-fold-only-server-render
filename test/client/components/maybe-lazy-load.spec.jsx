@@ -54,28 +54,43 @@ describe("components/maybe-lazy-load", () => {
 
   describe("client", () => {
 
-    it("should not render an out of viewport lazy child", () => {
-      const wrapper = mount(
-        <div>
-          <MaybeLazyLoad lazy={true} offset={100}>
-            <div className="someComponent"></div>
-          </MaybeLazyLoad>
-        </div>
+    it("should defer rendering a child that is lazy", (done) => {
+      let wrapper;
+      const onShow = () => {
+        expect(wrapper.find(".someComponent")).to.have.length(1);
+        done();
+      };
+
+      wrapper = mount(
+        <MaybeLazyLoad lazy={true} onShow={onShow}>
+          <div className="someComponent"></div>
+        </MaybeLazyLoad>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(0);
     });
 
-    it("should always render an unlazy child", () => {
+    it("should immediately render a child that is not lazy", () => {
       const wrapper = mount(
-        <div>
-          <MaybeLazyLoad lazy={false} offset={100}>
-            <div className="someComponent"></div>
-          </MaybeLazyLoad>
-        </div>
+        <MaybeLazyLoad lazy={false}>
+          <div className="someComponent"></div>
+        </MaybeLazyLoad>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(1);
+    });
+
+    it("should clear the timeout when it unmounts", () => {
+      const wrapper = mount(
+        <MaybeLazyLoad lazy={true}>
+          <div className="someComponent"></div>
+        </MaybeLazyLoad>
+      );
+      const instance = wrapper.instance();
+
+      expect(instance.timeout).to.not.equal(undefined);
+      wrapper.unmount();
+      expect(instance.timeout).to.equal(undefined);
     });
   });
 

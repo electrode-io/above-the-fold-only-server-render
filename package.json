@@ -23,7 +23,6 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
-    "react-lazy-load": "^3.0.10"
   },
   "devDependencies": {
     "@walmart/electrode-archetype-react-component": "^10.5.0",
