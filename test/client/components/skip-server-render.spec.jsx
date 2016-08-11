@@ -7,15 +7,34 @@ import SkipServerRender from "src/components/skip-server-render";
 
 describe("components/skip-server-render", () => {
   describe("placeholder", () => {
-    it("should set height and width for a placeholder", () => {
+    it("should set height and width for a default placeholder", () => {
       const wrapper = shallow(
-        <SkipServerRender className="placeholderComponent" skip={true} height="100%" width="50px">
+        <SkipServerRender
+          placeholderClassName="placeholderComponent"
+          placeholderHeight="100%"
+          placeholderWidth="50px"
+          skip={true}>
           <div className="someComponent"></div>
         </SkipServerRender>
       );
-      const placeholder = wrapper.find(".placeholderComponent");
 
-      expect(placeholder.props().style).to.deep.equal({ height: "100%", width: "50px" });
+      expect(wrapper.find(".someComponent")).to.have.length(0);
+      expect(wrapper.find(".placeholderComponent").props().style).to.deep.equal({
+        height: "100%",
+        width: "50px"
+      });
+    });
+
+    it("should render a custom placeholder", () => {
+      const placeholder = (<div className="customPlaceholder"></div>);
+      const wrapper = shallow(
+        <SkipServerRender skip={true} placeholder={placeholder}>
+          <div className="someComponent"></div>
+        </SkipServerRender>
+      );
+
+      expect(wrapper.find(".someComponent")).to.have.length(0);
+      expect(wrapper.find(".customPlaceholder")).to.have.length(1);
     });
   });
 
@@ -23,7 +42,7 @@ describe("components/skip-server-render", () => {
 
     it("should not statically render a lazy child", () => {
       const wrapper = shallow(
-        <SkipServerRender className="placeholderComponent" skip={true}>
+        <SkipServerRender placeholderClassName="placeholderComponent" skip={true}>
           <div className="someComponent"></div>
         </SkipServerRender>
       );
@@ -35,7 +54,7 @@ describe("components/skip-server-render", () => {
 
     it("should statically render an unlazy child", () => {
       const wrapper = shallow(
-        <SkipServerRender className="placeholderComponent" skip={false}>
+        <SkipServerRender placeholderClassName="placeholderComponent" skip={false}>
           <div className="someComponent"></div>
         </SkipServerRender>
       );

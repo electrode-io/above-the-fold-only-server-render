@@ -1,6 +1,6 @@
 # skip-server-render
 
-A configurable lazy component for React.
+A React component that optionally skips server rendering.
 
 > Before getting started, please make sure you read the [React Developer Guide](https://gecgithub01.walmart.com/react/react-dev-guide)!
 

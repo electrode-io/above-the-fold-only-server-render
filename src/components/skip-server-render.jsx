@@ -49,28 +49,41 @@ class SkipServerRender extends React.Component {
   }
 
   render(): ReactElement {
-    const {children, className, height, width} = this.props;
-    const {visible} = this.state;
-    const style = {height, width};
+    const {
+      children,
+      placeholder,
+      placeholderClassName,
+      placeholderHeight,
+      placeholderWidth
+    } = this.props;
+    const style = {
+      height: placeholderHeight,
+      width: placeholderWidth
+    };
 
-    return visible ? children : (
-      <div className={className} style={style}></div>
+    if (this.state.visible) {
+      return children;
+    }
+
+    return placeholder ? placeholder : (
+      <div className={placeholderClassName} style={style}></div>
     );
   }
 }
 
 SkipServerRender.propTypes = {
   children: React.PropTypes.node,
-  className: React.PropTypes.string,
-  height: React.PropTypes.oneOfType([
+  placeholder: React.PropTypes.element,
+  placeholderClassName: React.PropTypes.string,
+  placeholderHeight: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number
   ]),
-  skip: React.PropTypes.bool,
-  width: React.PropTypes.oneOfType([
+  placeholderWidth: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.number
-  ])
+  ]),
+  skip: React.PropTypes.bool
 };
 
 SkipServerRender.defaultProps = {
