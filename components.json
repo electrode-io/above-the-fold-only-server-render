@@ -1,0 +1,5 @@
+{
+  "library": "@walmart/maybe-lazy-load",
+  "description": "A configurable lazy component for React.",
+  "components": []
+}
