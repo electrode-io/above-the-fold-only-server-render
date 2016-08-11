@@ -502,7 +502,7 @@ sauce_connect*.txt
 *.dmp
 
 ### Walmart Projects ###
-lib
+# lib
 dist
 tmp
 
