@@ -7,12 +7,12 @@ import SkipServerRender from "src/components/skip-server-render";
 
 describe("components/skip-server-render", () => {
   describe("placeholder", () => {
-    it("should set height and width for a default placeholder", () => {
+    it("should set style for a default placeholder", () => {
+      const style = {height: "100%", width: "50px"};
       const wrapper = shallow(
         <SkipServerRender
           placeholderClassName="placeholderComponent"
-          placeholderHeight="100%"
-          placeholderWidth="50px"
+          style={style}
           skip={true}>
           <div className="someComponent"></div>
         </SkipServerRender>
