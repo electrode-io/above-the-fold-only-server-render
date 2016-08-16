@@ -1,5 +1,5 @@
 {
-  "name": "@walmart/electrode-skip-server-render",
+  "name": "@walmart/skip-server-render",
   "version": "1.0.0-beta",
   "description": "A React component wrapper for optionally skipping SSR.",
   "main": "lib/index.js",
