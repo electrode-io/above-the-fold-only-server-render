@@ -1,6 +1,6 @@
 {
-  "library": "@walmart/electrode-skip-server-render",
-  "description": "A React component that optionally skips server rendering.",
+  "library": "@walmart/skip-server-render",
+  "description": "A React component wrapper for optionally skipping SSR.",
   "components": [
     {
       "methods": [
@@ -17,7 +17,36 @@
         }
       ],
       "props": {
-        "height": {
+        "placeholder": {
+          "type": {
+            "name": "element"
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholderClassName": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholderHeight": {
+          "type": {
+            "name": "union",
+            "value": [
+              {
+                "name": "string"
+              },
+              {
+                "name": "number"
+              }
+            ]
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholderWidth": {
           "type": {
             "name": "union",
             "value": [
@@ -41,21 +70,6 @@
             "value": "false",
             "computed": false
           },
-          "description": ""
-        },
-        "width": {
-          "type": {
-            "name": "union",
-            "value": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "number"
-              }
-            ]
-          },
-          "required": false,
           "description": ""
         }
       },

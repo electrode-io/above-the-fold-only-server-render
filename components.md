@@ -1,6 +1,6 @@
-#  (@walmart/electrode-skip-server-render)
+#  (@walmart/skip-server-render)
 
-A React component that optionally skips server rendering.
+A React component wrapper for optionally skipping SSR.
 
 
 ## SkipServerRender
@@ -11,14 +11,16 @@ A component for configurable skip loading.
 
 | Property | Type | Description | Default |
 | -------- | ---- | ----------- | ------- |
-| *height* | union |  | 
+| *placeholder* | element |  | 
+| *placeholderClassName* | string |  | 
+| *placeholderHeight* | union |  | 
+| *placeholderWidth* | union |  | 
 | *skip* | bool |  | `false`
-| *width* | union |  | 
 
 ### import
 
 ```jsx
-import {SkipServerRender} from "@walmart/electrode-skip-server-render";
+import {SkipServerRender} from "@walmart/skip-server-render";
 ```
 
 <hr/>
