@@ -24,8 +24,8 @@ SkipServerRender
 */
 
 class SkipServerRender extends React.Component {
-  constructor(props): void {
-    super(props);
+  constructor(props, context): void {
+    super(props, context);
 
     this.state = { visible: !props.skip };
     this._onShow = this._onShow.bind(this);
