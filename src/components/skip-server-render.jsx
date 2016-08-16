@@ -1,7 +1,7 @@
 /*@flow*/
 /* global clearTimeout, setTimeout */
 
-import React from "react";
+import React, {Component, PropTypes} from "react";
 
 /**
 A component for configurable skip loading.
@@ -23,7 +23,7 @@ SkipServerRender
 @returns {ReactElement} The rendered component
 */
 
-class SkipServerRender extends React.Component {
+class SkipServerRender extends Component {
   constructor(props, context): void {
     super(props, context);
 
@@ -72,18 +72,18 @@ class SkipServerRender extends React.Component {
 }
 
 SkipServerRender.propTypes = {
-  children: React.PropTypes.node,
-  placeholder: React.PropTypes.element,
-  placeholderClassName: React.PropTypes.string,
-  placeholderHeight: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
+  children: PropTypes.node,
+  placeholder: PropTypes.element,
+  placeholderClassName: PropTypes.string,
+  placeholderHeight: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
   ]),
-  placeholderWidth: React.PropTypes.oneOfType([
-    React.PropTypes.string,
-    React.PropTypes.number
+  placeholderWidth: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
   ]),
-  skip: React.PropTypes.bool
+  skip: PropTypes.bool
 };
 
 SkipServerRender.defaultProps = {
