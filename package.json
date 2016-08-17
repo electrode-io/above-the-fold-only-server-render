@@ -1,6 +1,6 @@
 {
   "name": "@walmart/skip-server-render",
-  "version": "1.0.0-beta1",
+  "version": "1.0.0",
   "description": "A React component wrapper for optionally skipping SSR.",
   "main": "lib/index.js",
   "repository": {
