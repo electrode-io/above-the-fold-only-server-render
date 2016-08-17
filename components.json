@@ -1,0 +1,76 @@
+{
+  "library": "@walmart/skip-server-render",
+  "description": "A React component wrapper for optionally skipping SSR.",
+  "components": [
+    {
+      "methods": [
+        {
+          "name": "_onShow",
+          "docblock": null,
+          "modifiers": [],
+          "params": [],
+          "returns": {
+            "type": {
+              "name": "void"
+            }
+          }
+        }
+      ],
+      "props": {
+        "contextKey": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholder": {
+          "type": {
+            "name": "element"
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholderClassName": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
+        "placeholderStyle": {
+          "type": {
+            "name": "object"
+          },
+          "required": false,
+          "description": ""
+        },
+        "skip": {
+          "type": {
+            "name": "bool"
+          },
+          "required": false,
+          "defaultValue": {
+            "value": "false",
+            "computed": false
+          },
+          "description": ""
+        }
+      },
+      "fileName": "./src/components/skip-server-render.jsx",
+      "description": "A component for configurable skip loading.",
+      "examples": "```jsx\n<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n```",
+      "component": "SkipServerRender",
+      "import": "{SkipServerRender}",
+      "playground": [
+        {
+          "title": "SkipServerRender",
+          "flags": {},
+          "code": "<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n"
+        }
+      ],
+      "returns": "The rendered component",
+      "hasProps": true
+    }
+  ]
+}
