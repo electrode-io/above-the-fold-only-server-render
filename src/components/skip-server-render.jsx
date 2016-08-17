@@ -1,7 +1,8 @@
 /*@flow*/
 /* global clearTimeout, setTimeout */
 
-import React, {Component, PropTypes} from "react";
+import React, {Children, Component, PropTypes} from "react";
+import get from "lodash/get";
 
 /**
 A component for configurable skip loading.
@@ -27,7 +28,12 @@ class SkipServerRender extends Component {
   constructor(props, context): void {
     super(props, context);
 
-    this.state = { visible: !props.skip };
+    if (props.skip) {
+      this.state = { visible: false };
+    } else {
+      this.state = { visible: !get(context, props.contextKey, false) };
+    }
+
     this._onShow = this._onShow.bind(this);
   }
 
@@ -49,29 +55,33 @@ class SkipServerRender extends Component {
   }
 
   render(): ReactElement {
-    const {
-      children,
-      placeholder,
-      placeholderClassName,
-      style
-    } = this.props;
-
     if (this.state.visible) {
-      return children;
+      return Children.only(this.props.children);
     }
 
+    const {
+      placeholder,
+      placeholderClassName,
+      placeholderStyle
+    } = this.props;
+
     return placeholder ? placeholder : (
-      <div className={placeholderClassName} style={style}></div>
+      <div className={placeholderClassName} style={placeholderStyle}></div>
     );
   }
 }
 
 SkipServerRender.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
+  contextKey: PropTypes.string,
   placeholder: PropTypes.element,
   placeholderClassName: PropTypes.string,
-  skip: PropTypes.bool,
-  style: PropTypes.object
+  placeholderStyle: PropTypes.object,
+  skip: PropTypes.bool
+};
+
+SkipServerRender.contextTypes = {
+  skipServerRender: PropTypes.object
 };
 
 SkipServerRender.defaultProps = {

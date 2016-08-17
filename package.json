@@ -23,6 +23,7 @@
   },
   "license": "UNLICENSED",
   "dependencies": {
+    "lodash": "^4.0.0"
   },
   "devDependencies": {
     "@walmart/electrode-archetype-react-component": "^10.5.0",

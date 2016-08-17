@@ -11,10 +11,10 @@ A component for configurable skip loading.
 
 | Property | Type | Description | Default |
 | -------- | ---- | ----------- | ------- |
+| *contextKey* | string |  | 
 | *placeholder* | element |  | 
 | *placeholderClassName* | string |  | 
-| *placeholderHeight* | union |  | 
-| *placeholderWidth* | union |  | 
+| *placeholderStyle* | object |  | 
 | *skip* | bool |  | `false`
 
 ### import

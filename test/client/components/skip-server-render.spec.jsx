@@ -4,15 +4,52 @@ import React from "react";
 import { mount, shallow } from "enzyme";
 
 import SkipServerRender from "src/components/skip-server-render";
+import SomeComponent from "test/mocks/some-component";
 
 describe("components/skip-server-render", () => {
+  describe("context", () => {
+
+    it("should skip components based on contextKey", () => {
+      const wrapper = mount(
+        <SomeComponent>
+          <SkipServerRender contextKey="skipServerRender.CoolComponent">
+            <div className="coolComponent"></div>
+          </SkipServerRender>
+          <SkipServerRender contextKey="skipServerRender.NeatComponent">
+            <div className="neatComponent"></div>
+          </SkipServerRender>
+        </SomeComponent>
+      );
+
+      expect(wrapper.find(".coolComponent")).to.have.length(0);
+      expect(wrapper.find(".neatComponent")).to.have.length(1);
+    });
+
+  });
+
+  describe("children", () => {
+
+    it("should throw an error for multiple children", () => {
+      expect(() => {
+        shallow(
+          <SkipServerRender skip={false}>
+            <div className="coolComponent"></div>
+            <div className="coolComponent"></div>
+          </SkipServerRender>
+        );
+      }).to.throw();
+    });
+
+  });
+
   describe("placeholder", () => {
+
     it("should set style for a default placeholder", () => {
       const style = {height: "100%", width: "50px"};
       const wrapper = shallow(
         <SkipServerRender
           placeholderClassName="placeholderComponent"
-          style={style}
+          placeholderStyle={style}
           skip={true}>
           <div className="someComponent"></div>
         </SkipServerRender>
@@ -36,6 +73,7 @@ describe("components/skip-server-render", () => {
       expect(wrapper.find(".someComponent")).to.have.length(0);
       expect(wrapper.find(".customPlaceholder")).to.have.length(1);
     });
+
   });
 
   describe("server", () => {
@@ -63,6 +101,7 @@ describe("components/skip-server-render", () => {
       expect(html).to.include("someComponent");
       expect(html).to.not.include("placeholderComponent");
     });
+
   });
 
   describe("client", () => {
@@ -101,6 +140,19 @@ describe("components/skip-server-render", () => {
       const instance = wrapper.instance();
 
       expect(instance.timeout).to.not.equal(undefined);
+      wrapper.unmount();
+      expect(instance.timeout).to.equal(undefined);
+    });
+
+    it("should handle missing timeout", () => {
+      const wrapper = mount(
+        <SkipServerRender skip={true}>
+          <div className="someComponent"></div>
+        </SkipServerRender>
+      );
+      const instance = wrapper.instance();
+
+      instance.timeout = undefined;
       wrapper.unmount();
       expect(instance.timeout).to.equal(undefined);
     });

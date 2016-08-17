@@ -17,6 +17,13 @@
         }
       ],
       "props": {
+        "contextKey": {
+          "type": {
+            "name": "string"
+          },
+          "required": false,
+          "description": ""
+        },
         "placeholder": {
           "type": {
             "name": "element"
@@ -31,32 +38,9 @@
           "required": false,
           "description": ""
         },
-        "placeholderHeight": {
+        "placeholderStyle": {
           "type": {
-            "name": "union",
-            "value": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "number"
-              }
-            ]
-          },
-          "required": false,
-          "description": ""
-        },
-        "placeholderWidth": {
-          "type": {
-            "name": "union",
-            "value": [
-              {
-                "name": "string"
-              },
-              {
-                "name": "number"
-              }
-            ]
+            "name": "object"
           },
           "required": false,
           "description": ""
