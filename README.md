@@ -12,7 +12,7 @@ npm install @walmart/skip-server-render
 
 ## Usage
 
-By default, the `SkipServerRender` does nothing and simply returns the child component.
+By default, the `SkipServerRender` component does nothing and simply returns the child component.
 You can tell the component to skip server rendering either by passing a prop `skip={true}` or 
 setting up `skipServerRender` in your app context and passing the component a `contextKey` prop. 
 
