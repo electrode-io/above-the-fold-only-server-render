@@ -35,7 +35,7 @@ You can also skip server side rendering by setting context and passing a context
 
 const SomeComponent = () => {
     return (
-      <SkipServerRender contextKey="skipServerRender.AnotherComponent">
+      <SkipServerRender contextKey="skipServerRender.SomeComponent">
         <div>This will not be server side rendered based on the context.</div>
       </SkipServerRender>
     );
@@ -68,7 +68,8 @@ SomeApp.childContextTypes = {
 ## Performance
 
 `SkipServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
-The following table outlines a clear performance increase in the `R-Discovery/home` app by using `SkipServerRender` wrappers.
+The following table outlines a clear performance increase in the `R-Discovery/home` app by skipping server rendering on 
+the `Footer` component and several below the fold zones.
 
 |          | HTML Size      | renderToString Time |
 | -------- | -------------- | ------------------- |
