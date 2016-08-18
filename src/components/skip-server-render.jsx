@@ -72,11 +72,34 @@ class SkipServerRender extends Component {
 }
 
 SkipServerRender.propTypes = {
+  /**
+  A single child must be passed to SkipServerRender
+  */
   children: PropTypes.node.isRequired,
+
+  /**
+  Tell SkipServerRender to read context in order to skip server side rendering
+  */
   contextKey: PropTypes.string,
+
+  /**
+  Pass in another element to render when skipping server side rendering
+  */
   placeholder: PropTypes.element,
+
+  /**
+  Sets the className of the default placeholder
+  */
   placeholderClassName: PropTypes.string,
+
+  /**
+  Sets the style of the default placeholder
+  */
   placeholderStyle: PropTypes.object,
+
+  /**
+  Tell SkipServerRender to skip server side rendering
+  */
   skip: PropTypes.bool
 };
 

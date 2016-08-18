@@ -10,6 +10,74 @@ A React component wrapper for optionally skipping SSR.
 npm install @walmart/skip-server-render
 ```
 
+## Usage
+
+By default, the `SkipServerRender` component does nothing and simply returns the child component.
+You can tell the component to skip server rendering either by passing a prop `skip={true}` or 
+setting up `skipServerRender` in your app context and passing the component a `contextKey` prop. 
+
+You can skip server side rendering by passing a skip prop:
+
+```js
+
+const SomeComponent = () => {
+  return (
+    <SkipServerRender skip={true}>
+      <div>This will not be server side rendered.</div>
+    </SkipServerRender>
+  );
+};
+```
+
+You can also skip server side rendering by setting context and passing a contextKey prop:
+
+```js
+
+const SomeComponent = () => {
+    return (
+      <SkipServerRender contextKey="skipServerRender.SomeComponent">
+        <div>This will not be server side rendered based on the context.</div>
+      </SkipServerRender>
+    );
+};
+
+class SomeApp extends React.Component {
+  getChildContext() {
+    return {
+      skipServerRender: {
+        SomeComponent: true
+      }
+    };
+  }
+
+  render() {
+    return (
+      <SomeComponent />
+    );
+  }
+}
+
+SomeApp.childContextTypes = {
+  skipServerRender: React.PropTypes.shape({
+    AnotherComponent: React.PropTypes.bool
+  })
+};
+
+```
+
+## Performance
+
+`SkipServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
+The following table outlines a clear performance increase in the `R-Discovery/home` app by skipping server rendering on 
+the `Footer` component and several other below the fold zones.
+
+|          | HTML Size      | renderToString Time |
+| -------- | -------------- | ------------------- |
+| before   | 452 kB         | 249 ms              |
+| after    | 315 kB         | 177 ms              |
+| diff     | -137 kB (-30%) | -72 ms (-29%)       |
+
+
 ## Development Guide
 
 We have an ever-green guide to our development practices with this archetype. 
