@@ -1,7 +1,7 @@
 /*@flow*/
 /* global clearTimeout, setTimeout */
 
-import React, {Children, Component, PropTypes} from "react";
+import React, {Component, PropTypes} from "react";
 import get from "lodash/get";
 
 /**
@@ -56,7 +56,7 @@ class SkipServerRender extends Component {
 
   render(): ReactElement {
     if (this.state.visible) {
-      return Children.only(this.props.children);
+      return this.props.children;
     }
 
     const {
@@ -73,9 +73,12 @@ class SkipServerRender extends Component {
 
 SkipServerRender.propTypes = {
   /**
-  A single child must be passed to SkipServerRender
+  Children to render when visible
   */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ]),
 
   /**
   Tell SkipServerRender to read context in order to skip server side rendering

@@ -27,21 +27,6 @@ describe("components/skip-server-render", () => {
 
   });
 
-  describe("children", () => {
-
-    it("should throw an error for multiple children", () => {
-      expect(() => {
-        shallow(
-          <SkipServerRender skip={false}>
-            <div className="coolComponent"></div>
-            <div className="coolComponent"></div>
-          </SkipServerRender>
-        );
-      }).to.throw();
-    });
-
-  });
-
   describe("placeholder", () => {
 
     it("should set style for a default placeholder", () => {
