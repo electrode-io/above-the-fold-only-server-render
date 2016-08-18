@@ -10,6 +10,61 @@ A React component wrapper for optionally skipping SSR.
 npm install @walmart/skip-server-render
 ```
 
+## Usage
+
+By default, the `SkipServerRender` does nothing and simply returns the child component.
+You can tell the component to skip server rendering either by passing a prop `skip={true}` or 
+setting up `skipServerRender` in your app context and passing the component a `contextKey` prop. 
+
+You can skip server side rendering by passing a skip prop:
+
+```js
+
+const SomeComponent = () => {
+  return (
+    <SkipServerRender skip={true}>
+      <div>This will not be server side rendered.</div>
+    </SkipServerRender>
+  );
+};
+```
+
+You can also skip server side rendering by setting context and passing a contextKey prop.
+
+```js
+
+const SomeComponent = () => {
+    return (
+      <SkipServerRender contextKey="skipServerRender.AnotherComponent">
+        <div>This will not be server side rendered based on the context.</div>
+      </SkipServerRender>
+    );
+};
+
+const SomeApp extends React.Component {
+  getChildContext() {
+    return {
+      skipServerRender: {
+        SomeComponent: true
+      }
+    };
+  }
+
+  render() {
+    return (
+      <SomeComponent />
+    );
+  }
+}
+
+SomeApp.childContextTypes = {
+  skipServerRender: React.PropTypes.shape({
+    AnotherComponent: React.PropTypes.bool
+  })
+};
+
+```
+
 ## Development Guide
 
 We have an ever-green guide to our development practices with this archetype. 
