@@ -69,7 +69,7 @@ SomeApp.childContextTypes = {
 
 `SkipServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
 The following table outlines a clear performance increase in the `R-Discovery/home` app by skipping server rendering on 
-the `Footer` component and several below the fold zones.
+the `Footer` component and several other below the fold zones.
 
 |          | HTML Size      | renderToString Time |
 | -------- | -------------- | ------------------- |
