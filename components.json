@@ -1,5 +1,5 @@
 {
-  "library": "@walmart/skip-server-render",
+  "library": "skip-server-render",
   "description": "A React component wrapper for optionally skipping SSR.",
   "components": [
     {
@@ -22,28 +22,28 @@
             "name": "string"
           },
           "required": false,
-          "description": ""
+          "description": "Tell SkipServerRender to read context in order to skip server side rendering"
         },
         "placeholder": {
           "type": {
             "name": "element"
           },
           "required": false,
-          "description": ""
+          "description": "Pass in another element to render when skipping server side rendering"
         },
         "placeholderClassName": {
           "type": {
             "name": "string"
           },
           "required": false,
-          "description": ""
+          "description": "Sets the className of the default placeholder"
         },
         "placeholderStyle": {
           "type": {
             "name": "object"
           },
           "required": false,
-          "description": ""
+          "description": "Sets the style of the default placeholder"
         },
         "skip": {
           "type": {
@@ -54,7 +54,7 @@
             "value": "false",
             "computed": false
           },
-          "description": ""
+          "description": "Tell SkipServerRender to skip server side rendering"
         }
       },
       "fileName": "./src/components/skip-server-render.jsx",

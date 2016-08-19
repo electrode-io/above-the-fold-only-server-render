@@ -6,6 +6,8 @@ import { mount, shallow } from "enzyme";
 import SkipServerRender from "src/components/skip-server-render";
 import SomeComponent from "test/mocks/some-component";
 
+const SHOW_TIMEOUT = 50;
+
 describe("components/skip-server-render", () => {
   describe("context", () => {
 
@@ -103,7 +105,7 @@ describe("components/skip-server-render", () => {
       setTimeout(() => {
         expect(wrapper.find(".someComponent")).to.have.length(1);
         done();
-      }, 55);
+      }, SHOW_TIMEOUT);
     });
 
     it("should immediately render a child that is not lazy", () => {

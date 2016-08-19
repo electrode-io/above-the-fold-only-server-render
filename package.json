@@ -1,39 +1,28 @@
 {
-  "name": "@walmart/skip-server-render",
-  "version": "1.0.2",
+  "name": "skip-server-render",
+  "version": "1.0.0",
   "description": "A React component wrapper for optionally skipping SSR.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://gecgithub01.walmart.com/electrode/skip-server-render.git"
+    "url": "https://github.com/electrode-io/skip-server-render.git"
   },
   "bugs": {
-    "url": "https://gecgithub01.walmart.com/electrode/skip-server-render/issues"
+    "url": "https://github.com/electrode-io/skip-server-render/issues"
   },
-  "homepage": "https://gecgithub01.walmart.com/electrode/skip-server-render",
-  "scripts": {
-    "demo": "builder run generate && builder run server-dev",
-    "demo-iso": "builder run dev-iso",
-    "generate": "npm run generate-metadata && npm run generate-documentation",
-    "generate-documentation": "electrode-docgen --package ./package.json --src ./src --markdown components.md",
-    "generate-metadata": "electrode-docgen --package ./package.json --src ./src --metadata components.json",
-    "prepublish": "builder run npm:prepublish",
-    "preversion": "builder run test",
-    "test": "builder run check-cov"
-  },
-  "license": "UNLICENSED",
+  "homepage": "https://github.com/electrode-io/skip-server-render",
+  "scripts": {},
+  "license": "MIT",
   "dependencies": {
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "@walmart/electrode-archetype-react-component": "^10.5.0",
-    "@walmart/electrode-archetype-react-component-dev": "^10.5.0",
-    "@walmart/electrode-demo-index": "^1.4.0",
-    "@walmart/electrode-docgen": "^1",
-    "@walmart/lithe-extras": "^2.8.0",
-    "builder": "^2.10.1",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8"
+    "electrode-archetype-react-component": "^1.0.0",
+    "electrode-archetype-react-component-dev": "^1.0.0",
+    "electrode-demo-index": "^1.0.0",
+    "electrode-docgen": "^1.0.0",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
   },
   "engines": {
     "node": "^4.2.6",

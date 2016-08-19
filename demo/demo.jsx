@@ -1,7 +1,7 @@
 /*@flow*/
 /*global document:false*/
 import React from "react";
-import ElectrodeDemoIndex from "@walmart/electrode-demo-index";
+import ElectrodeDemoIndex from "electrode-demo-index";
 
 import * as libraryScope from "../src/index";
 

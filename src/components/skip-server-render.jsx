@@ -4,6 +4,8 @@
 import React, {Component, PropTypes} from "react";
 import get from "lodash/get";
 
+const SHOW_TIMEOUT = 50;
+
 /**
 A component for configurable skip loading.
 @examples
@@ -39,7 +41,7 @@ class SkipServerRender extends Component {
 
   componentDidMount(): void {
     if (!this.state.visible) {
-      this.timeout = setTimeout(this._onShow, 50);
+      this.timeout = setTimeout(this._onShow, SHOW_TIMEOUT);
     }
   }
 
