@@ -77,6 +77,10 @@ the `Footer` component and several other below the fold zones.
 | after    | 315 kB         | 177 ms              |
 | diff     | -137 kB (-30%) | -72 ms (-29%)       |
 
+## Examples
+
+1. Home App: https://gecgithub01.walmart.com/R-Discovery/home/pull/299
+2. Footer Component: https://gecgithub01.walmart.com/react/footer/pull/97
 
 ## Development Guide
 
