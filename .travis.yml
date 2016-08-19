@@ -4,5 +4,5 @@ node_js:
 before_install:
   - npm install -g gulp
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-electrode-component' ]; then cd .. && eval "mv $currentfolder generator-electrode-component" && cd generator-electrode-component; fi
+  - if [ "$currentfolder" != 'skip-server-render' ]; then cd .. && eval "mv $currentfolder skip-server-render" && cd skip-server-render; fi
 script: gulp test
