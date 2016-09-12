@@ -1,24 +1,24 @@
 {
-  "name": "skip-server-render",
+  "name": "above-the-fold-only-server-render",
   "version": "1.0.0",
   "description": "A React component wrapper for optionally skipping SSR.",
   "main": "lib/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/electrode-io/skip-server-render.git"
+    "url": "https://github.com/electrode-io/above-the-fold-only-server-render.git"
   },
   "bugs": {
-    "url": "https://github.com/electrode-io/skip-server-render/issues"
+    "url": "https://github.com/electrode-io/above-the-fold-only-server-render/issues"
   },
-  "homepage": "https://github.com/electrode-io/skip-server-render",
+  "homepage": "https://github.com/electrode-io/above-the-fold-only-server-render",
   "scripts": {},
-  "license": "MIT",
+  "license": "Apache-2.0",
   "dependencies": {
     "lodash": "^4.0.0"
   },
   "devDependencies": {
-    "electrode-archetype-react-component": "^1.0.0",
-    "electrode-archetype-react-component-dev": "^1.0.0",
+    "electrode-archetype-react-component": "^1.1.1",
+    "electrode-archetype-react-component-dev": "^1.1.1",
     "electrode-demo-index": "^1.0.0",
     "electrode-docgen": "^1.0.0",
     "react": "^15.3.1",

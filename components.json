@@ -1,5 +1,5 @@
 {
-  "library": "skip-server-render",
+  "library": "above-the-fold-only-server-render",
   "description": "A React component wrapper for optionally skipping SSR.",
   "components": [
     {
@@ -22,7 +22,7 @@
             "name": "string"
           },
           "required": false,
-          "description": "Tell SkipServerRender to read context in order to skip server side rendering"
+          "description": "Tell AboveTheFoldOnlyServerRender to read context in order to skip server side rendering"
         },
         "placeholder": {
           "type": {
@@ -54,19 +54,19 @@
             "value": "false",
             "computed": false
           },
-          "description": "Tell SkipServerRender to skip server side rendering"
+          "description": "Tell AboveTheFoldOnlyServerRender to skip server side rendering"
         }
       },
-      "fileName": "./src/components/skip-server-render.jsx",
+      "fileName": "./src/components/above-the-fold-only-server-render.jsx",
       "description": "A component for configurable skip loading.",
-      "examples": "```jsx\n<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n```",
-      "component": "SkipServerRender",
-      "import": "{SkipServerRender}",
+      "examples": "```jsx\n<AboveTheFoldOnlyServerRender skip={true}>\n  <Footer />\n</AboveTheFoldOnlyServerRender>\n```",
+      "component": "AboveTheFoldOnlyServerRender",
+      "import": "{AboveTheFoldOnlyServerRender}",
       "playground": [
         {
-          "title": "SkipServerRender",
+          "title": "AboveTheFoldOnlyServerRender",
           "flags": {},
-          "code": "<SkipServerRender skip={true}>\n  <Footer />\n</SkipServerRender>\n"
+          "code": "<AboveTheFoldOnlyServerRender skip={true}>\n  <Footer />\n</AboveTheFoldOnlyServerRender>\n"
         }
       ],
       "returns": "The rendered component",

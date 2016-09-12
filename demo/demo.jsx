@@ -7,11 +7,11 @@ import * as libraryScope from "../src/index";
 
 const components = [
   {
-    title: "SkipServerRender",
+    title: "AboveTheFoldOnlyServerRender",
     examples: [
       {
         type: "playground",
-        code: require("raw!./examples/skip-server-render.example"),
+        code: require("raw!./examples/above-the-fold-only-server-render.example"),
         noRender: true
       }
     ]

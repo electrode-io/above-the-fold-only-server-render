@@ -1,0 +1,3 @@
+<AboveTheFoldOnlyServerRender skip={true}>
+  <div>This will not be rendered on the server.</div>
+</AboveTheFoldOnlyServerRender>

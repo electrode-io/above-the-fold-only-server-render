@@ -1,1 +1,2 @@
-export { default as SkipServerRender } from "./components/skip-server-render";
+export { default as AboveTheFoldOnlyServerRender }
+  from "./components/above-the-fold-only-server-render";

@@ -4,5 +4,5 @@ node_js:
 before_install:
   - npm install -g gulp
   - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'skip-server-render' ]; then cd .. && eval "mv $currentfolder skip-server-render" && cd skip-server-render; fi
+  - if [ "$currentfolder" != 'above-the-fold-only-server-render' ]; then cd .. && eval "mv $currentfolder above-the-fold-only-server-render" && cd above-the-fold-only-server-render; fi
 script: gulp test

@@ -10,23 +10,23 @@ const SHOW_TIMEOUT = 50;
 A component for configurable skip loading.
 @examples
 ```jsx
-<SkipServerRender skip={true}>
+<AboveTheFoldOnlyServerRender skip={true}>
   <Footer />
-</SkipServerRender>
+</AboveTheFoldOnlyServerRender>
 ```
-@component SkipServerRender
-@import {SkipServerRender}
+@component AboveTheFoldOnlyServerRender
+@import {AboveTheFoldOnlyServerRender}
 @playground
-SkipServerRender
+AboveTheFoldOnlyServerRender
 ```
-<SkipServerRender skip={true}>
+<AboveTheFoldOnlyServerRender skip={true}>
   <Footer />
-</SkipServerRender>
+</AboveTheFoldOnlyServerRender>
 ```
 @returns {ReactElement} The rendered component
 */
 
-class SkipServerRender extends Component {
+class AboveTheFoldOnlyServerRender extends Component {
   constructor(props, context): void {
     super(props, context);
 
@@ -73,7 +73,7 @@ class SkipServerRender extends Component {
   }
 }
 
-SkipServerRender.propTypes = {
+AboveTheFoldOnlyServerRender.propTypes = {
   /**
   Children to render when visible
   */
@@ -83,7 +83,7 @@ SkipServerRender.propTypes = {
   ]),
 
   /**
-  Tell SkipServerRender to read context in order to skip server side rendering
+  Tell AboveTheFoldOnlyServerRender to read context in order to skip server side rendering
   */
   contextKey: PropTypes.string,
 
@@ -103,17 +103,17 @@ SkipServerRender.propTypes = {
   placeholderStyle: PropTypes.object,
 
   /**
-  Tell SkipServerRender to skip server side rendering
+  Tell AboveTheFoldOnlyServerRender to skip server side rendering
   */
   skip: PropTypes.bool
 };
 
-SkipServerRender.contextTypes = {
-  skipServerRender: PropTypes.object
+AboveTheFoldOnlyServerRender.contextTypes = {
+  aboveTheFoldOnlyServerRender: PropTypes.object
 };
 
-SkipServerRender.defaultProps = {
+AboveTheFoldOnlyServerRender.defaultProps = {
   skip: false
 };
 
-export default SkipServerRender;
+export default AboveTheFoldOnlyServerRender;

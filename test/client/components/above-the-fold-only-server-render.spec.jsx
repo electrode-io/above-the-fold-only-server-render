@@ -3,23 +3,23 @@
 import React from "react";
 import { mount, shallow } from "enzyme";
 
-import SkipServerRender from "src/components/skip-server-render";
+import AboveTheFoldOnlyServerRender from "src/components/above-the-fold-only-server-render";
 import SomeComponent from "test/mocks/some-component";
 
 const SHOW_TIMEOUT = 50;
 
-describe("components/skip-server-render", () => {
+describe("components/above-the-fold-only-server-render", () => {
   describe("context", () => {
 
     it("should skip components based on contextKey", () => {
       const wrapper = mount(
         <SomeComponent>
-          <SkipServerRender contextKey="skipServerRender.CoolComponent">
+          <AboveTheFoldOnlyServerRender contextKey="aboveTheFoldOnlyServerRender.CoolComponent">
             <div className="coolComponent"></div>
-          </SkipServerRender>
-          <SkipServerRender contextKey="skipServerRender.NeatComponent">
+          </AboveTheFoldOnlyServerRender>
+          <AboveTheFoldOnlyServerRender contextKey="aboveTheFoldOnlyServerRender.NeatComponent">
             <div className="neatComponent"></div>
-          </SkipServerRender>
+          </AboveTheFoldOnlyServerRender>
         </SomeComponent>
       );
 
@@ -34,12 +34,12 @@ describe("components/skip-server-render", () => {
     it("should set style for a default placeholder", () => {
       const style = {height: "100%", width: "50px"};
       const wrapper = shallow(
-        <SkipServerRender
+        <AboveTheFoldOnlyServerRender
           placeholderClassName="placeholderComponent"
           placeholderStyle={style}
           skip={true}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(0);
@@ -52,9 +52,9 @@ describe("components/skip-server-render", () => {
     it("should render a custom placeholder", () => {
       const placeholder = (<div className="customPlaceholder"></div>);
       const wrapper = shallow(
-        <SkipServerRender skip={true} placeholder={placeholder}>
+        <AboveTheFoldOnlyServerRender skip={true} placeholder={placeholder}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(0);
@@ -67,9 +67,9 @@ describe("components/skip-server-render", () => {
 
     it("should not statically render a lazy child", () => {
       const wrapper = shallow(
-        <SkipServerRender placeholderClassName="placeholderComponent" skip={true}>
+        <AboveTheFoldOnlyServerRender placeholderClassName="placeholderComponent" skip={true}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
       const html = wrapper.html();
 
@@ -79,9 +79,9 @@ describe("components/skip-server-render", () => {
 
     it("should statically render an unlazy child", () => {
       const wrapper = shallow(
-        <SkipServerRender placeholderClassName="placeholderComponent" skip={false}>
+        <AboveTheFoldOnlyServerRender placeholderClassName="placeholderComponent" skip={false}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
       const html = wrapper.html();
 
@@ -95,9 +95,9 @@ describe("components/skip-server-render", () => {
 
     it("should defer rendering a child that is lazy", (done) => {
       const wrapper = mount(
-        <SkipServerRender skip={true}>
+        <AboveTheFoldOnlyServerRender skip={true}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(0);
@@ -110,9 +110,9 @@ describe("components/skip-server-render", () => {
 
     it("should immediately render a child that is not lazy", () => {
       const wrapper = mount(
-        <SkipServerRender skip={false}>
+        <AboveTheFoldOnlyServerRender skip={false}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
 
       expect(wrapper.find(".someComponent")).to.have.length(1);
@@ -120,9 +120,9 @@ describe("components/skip-server-render", () => {
 
     it("should clear the timeout when it unmounts", () => {
       const wrapper = mount(
-        <SkipServerRender skip={true}>
+        <AboveTheFoldOnlyServerRender skip={true}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
       const instance = wrapper.instance();
 
@@ -133,9 +133,9 @@ describe("components/skip-server-render", () => {
 
     it("should handle missing timeout", () => {
       const wrapper = mount(
-        <SkipServerRender skip={true}>
+        <AboveTheFoldOnlyServerRender skip={true}>
           <div className="someComponent"></div>
-        </SkipServerRender>
+        </AboveTheFoldOnlyServerRender>
       );
       const instance = wrapper.instance();
 

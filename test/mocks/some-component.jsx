@@ -4,7 +4,7 @@ import React, {Component, PropTypes} from "react";
 class SomeComponent extends Component {
   getChildContext() {
     return {
-      skipServerRender: {
+      aboveTheFoldOnlyServerRender: {
         CoolComponent: true,
         NeatComponent: false
       }
@@ -28,7 +28,7 @@ SomeComponent.propTypes = {
 };
 
 SomeComponent.childContextTypes = {
-  skipServerRender: PropTypes.shape({
+  aboveTheFoldOnlyServerRender: PropTypes.shape({
     CoolComponent: PropTypes.bool,
     NeatComponent: PropTypes.bool
   })

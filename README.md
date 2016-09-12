@@ -1,18 +1,18 @@
-# skip-server-render
+# above-the-fold-only-server-render
 
-A React component wrapper for optionally skipping SSR.
+A React component wrapper for optionally skipping server side rendering. This component helps render your components on server that are above the fold and the rest on client.
 
 ## Installation
 
 ```
-npm install skip-server-render
+npm install above-the-fold-only-server-render
 ```
 
 ## Usage
 
-By default, the `SkipServerRender` component does nothing and simply returns the child component.
+By default, the `AboveTheFoldOnlyServerRender` component does nothing and simply returns the child component.
 You can tell the component to skip server rendering either by passing a prop `skip={true}` or
-setting up `skipServerRender` in your app context and passing the component a `contextKey` prop.
+setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
 You can skip server side rendering by passing a skip prop:
 
@@ -20,9 +20,9 @@ You can skip server side rendering by passing a skip prop:
 
 const SomeComponent = () => {
   return (
-    <SkipServerRender skip={true}>
+    <AboveTheFoldOnlyServerRender skip={true}>
       <div>This will not be server side rendered.</div>
-    </SkipServerRender>
+    </AboveTheFoldOnlyServerRender>
   );
 };
 ```
@@ -33,16 +33,16 @@ You can also skip server side rendering by setting context and passing a context
 
 const SomeComponent = () => {
     return (
-      <SkipServerRender contextKey="skipServerRender.SomeComponent">
+      <AboveTheFoldOnlyServerRender contextKey="aboveTheFoldOnlyServerRender.SomeComponent">
         <div>This will not be server side rendered based on the context.</div>
-      </SkipServerRender>
+      </AboveTheFoldOnlyServerRender>
     );
 };
 
 class SomeApp extends React.Component {
   getChildContext() {
     return {
-      skipServerRender: {
+      aboveTheFoldOnlyServerRender: {
         SomeComponent: true
       }
     };
@@ -56,7 +56,7 @@ class SomeApp extends React.Component {
 }
 
 SomeApp.childContextTypes = {
-  skipServerRender: React.PropTypes.shape({
+  aboveTheFoldOnlyServerRender: React.PropTypes.shape({
     AnotherComponent: React.PropTypes.bool
   })
 };
@@ -65,7 +65,7 @@ SomeApp.childContextTypes = {
 
 ## Performance
 
-`SkipServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
+`AboveTheFoldOnlyServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
 The following table outlines a clear performance increase in the `example` app by skipping server rendering on
 the `Footer` component and several other below the fold zones.
 
