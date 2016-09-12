@@ -1,6 +1,6 @@
 # above-the-fold-only-server-render
 
-A React component wrapper for optionally skipping server side rendering. This component helps render your components on server that are above the fold and the rest on client.
+A React component for optionally skipping server side rendering of components outside of above-the-fold. This component helps render your components on server that are above the fold and the rest on client.
 
 ## Installation
 
