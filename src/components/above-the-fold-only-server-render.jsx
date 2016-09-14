@@ -67,7 +67,7 @@ class AboveTheFoldOnlyServerRender extends Component {
       placeholderStyle
     } = this.props;
 
-    return placeholder ? placeholder : (
+    return placeholder || (
       <div className={placeholderClassName} style={placeholderStyle}></div>
     );
   }
