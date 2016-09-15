@@ -1,6 +1,6 @@
 {
   "name": "above-the-fold-only-server-render",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A React component wrapper for optionally skipping SSR.",
   "main": "lib/index.js",
   "repository": {
@@ -11,7 +11,9 @@
     "url": "https://github.com/electrode-io/above-the-fold-only-server-render/issues"
   },
   "homepage": "https://github.com/electrode-io/above-the-fold-only-server-render",
-  "scripts": {},
+  "scripts": {
+    "prepublish": "gulp prepublish"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "lodash": "^4.0.0"
