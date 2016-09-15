@@ -1,6 +1,18 @@
 # above-the-fold-only-server-render
 
-A React component for optionally skipping server side rendering of components outside of above-the-fold. This component helps render your components on server that are above the fold and the rest on client.
+A React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
+
+## Performance
+
+`AboveTheFoldOnlyServerRender` helps increase performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
+
+The following table outlines a clear performance increase in the `example` app by skipping server rendering on the [Walmart.com](walmart/com) `Footer` component and several other below the fold zones:
+
+|          | HTML Size      | renderToString Time |
+| -------- | -------------- | ------------------- |
+| before   | 452 kB         | 249 ms              |
+| after    | 315 kB         | 177 ms              |
+| diff     | -137 kB (-30%) | -72 ms (-29%)       |
 
 ## Installation
 
@@ -10,9 +22,8 @@ npm install above-the-fold-only-server-render
 
 ## Usage
 
-By default, the `AboveTheFoldOnlyServerRender` component does nothing and simply returns the child component.
-You can tell the component to skip server rendering either by passing a prop `skip={true}` or
-setting up `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
+By default, the `AboveTheFoldOnlyServerRender` component does nothing and simply returns the child component. You can tell the component to skip server rendering either by passing a prop `skip={true}` or setting up
+`aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
 You can skip server side rendering by passing a skip prop:
 
@@ -62,19 +73,6 @@ SomeApp.childContextTypes = {
 };
 
 ```
-
-## Performance
-
-`AboveTheFoldOnlyServerRender` helps performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
-The following table outlines a clear performance increase in the `example` app by skipping server rendering on
-the `Footer` component and several other below the fold zones.
-
-|          | HTML Size      | renderToString Time |
-| -------- | -------------- | ------------------- |
-| before   | 452 kB         | 249 ms              |
-| after    | 315 kB         | 177 ms              |
-| diff     | -137 kB (-30%) | -72 ms (-29%)       |
-
 
 ## Development Guide
 
