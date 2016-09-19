@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/electrode-io/above-the-fold-only-server-render.svg?branch=master)](https://travis-ci.org/electrode-io/above-the-fold-only-server-render)
+
 # above-the-fold-only-server-render
 
 A React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
