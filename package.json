@@ -26,9 +26,5 @@
     "electrode-docgen": "^1.0.0",
     "react": "^15.3.1",
     "react-dom": "^15.3.1"
-  },
-  "engines": {
-    "node": "^4.2.6",
-    "npm": "^3.5.3"
   }
 }
