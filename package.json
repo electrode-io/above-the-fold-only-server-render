@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/electrode-io/above-the-fold-only-server-render",
   "scripts": {
-    "prepublish": "gulp prepublish"
+    "prepublish": "gulp prepublish",
+    "test": "gulp test"
   },
   "license": "Apache-2.0",
   "dependencies": {
