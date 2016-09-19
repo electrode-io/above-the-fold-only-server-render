@@ -1,9 +1,13 @@
 language: node_js
 node_js:
-  - '4.2.6'
+  - v6
 before_install:
   - npm install -g gulp
   - currentfolder=${PWD##*/}
   - if [ "$currentfolder" != 'above-the-fold-only-server-render' ]; then cd .. && eval "mv $currentfolder above-the-fold-only-server-render" && cd above-the-fold-only-server-render; fi
 script:
   - npm test
+notifications:
+  email:
+    - XChen@walmartlabs.com
+    - ananavati@walmartlabs.com
