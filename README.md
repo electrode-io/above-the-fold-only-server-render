@@ -22,7 +22,7 @@ npm install above-the-fold-only-server-render
 
 ## Usage
 
-By default, the `AboveTheFoldOnlyServerRender` component does nothing and simply returns the child component. You can tell the component to skip server rendering either by passing a prop `skip={true}` or setting up
+By default, the `AboveTheFoldOnlyServerRender` component simply returns the child component. You can tell the component to skip server rendering either by passing a prop `skip={true}` or setting up
 `aboveTheFoldOnlyServerRender` in your app context and passing the component a `contextKey` prop.
 
 You can skip server side rendering by passing a skip prop:
