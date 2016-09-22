@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/electrode-io/above-the-fold-only-server-render.svg?branch=master)](https://travis-ci.org/electrode-io/above-the-fold-only-server-render)
-
 # above-the-fold-only-server-render
+
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 
 A React component for optionally skipping server side rendering of components outside above-the-fold (or outside of the viewport). This component helps render your components on the server that are above the fold and the remaining components on the client.
 
@@ -111,3 +111,10 @@ gulp build
 When using npm link, you must delete react from `zeus-components-layout/node_modules/`. This is because npm link is just a symlink, not a proper `npm install`.
 
 You must also run `gulp build`
+
+[npm-image]: https://badge.fury.io/js/above-the-fold-only-server-render.svg
+[npm-url]: https://npmjs.org/package/above-the-fold-only-server-render
+[travis-image]: https://travis-ci.org/electrode-io/above-the-fold-only-server-render.svg?branch=master
+[travis-url]: https://travis-ci.org/electrode-io/above-the-fold-only-server-render
+[daviddm-image]: https://david-dm.org/electrode-io/above-the-fold-only-server-render.svg?theme=shields.io
+[daviddm-url]: https://david-dm.org/electrode-io/above-the-fold-only-server-render
