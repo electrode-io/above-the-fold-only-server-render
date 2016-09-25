@@ -112,6 +112,8 @@ When using npm link, you must delete react from `zeus-components-layout/node_mod
 
 You must also run `gulp build`
 
+Built with :heart: by [Team Electrode](https://github.com/orgs/electrode-io/people) @WalmartLabs.
+
 [npm-image]: https://badge.fury.io/js/above-the-fold-only-server-render.svg
 [npm-url]: https://npmjs.org/package/above-the-fold-only-server-render
 [travis-image]: https://travis-ci.org/electrode-io/above-the-fold-only-server-render.svg?branch=master
