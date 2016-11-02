@@ -30,6 +30,7 @@ By default, the `AboveTheFoldOnlyServerRender` component simply returns the chil
 You can skip server side rendering by passing a skip prop:
 
 ```js
+import { AboveTheFoldOnlyServerRender } from "above-the-fold-only-server-render";
 
 const SomeComponent = () => {
   return (
@@ -43,6 +44,7 @@ const SomeComponent = () => {
 You can also skip server side rendering by setting context and passing a contextKey prop:
 
 ```js
+import { AboveTheFoldOnlyServerRender } from "above-the-fold-only-server-render";
 
 const SomeComponent = () => {
     return (
