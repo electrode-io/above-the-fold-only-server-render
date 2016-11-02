@@ -21,10 +21,6 @@
   },
   "devDependencies": {
     "electrode-archetype-react-component": "^1.1.1",
-    "electrode-archetype-react-component-dev": "^1.1.1",
-    "electrode-demo-index": "^1.0.0",
-    "electrode-docgen": "^1.0.0",
-    "react": "^15.3.1",
-    "react-dom": "^15.3.1"
+    "electrode-archetype-react-component-dev": "^1.1.1"
   }
 }
