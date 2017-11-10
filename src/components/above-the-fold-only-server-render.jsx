@@ -1,7 +1,8 @@
 /*@flow*/
 /* global clearTimeout, setTimeout */
 
-import React, {Component, PropTypes} from "react";
+import React, {Component} from "react";
+import PropTypes from "prop-types";
 import get from "lodash/get";
 
 const SHOW_TIMEOUT = 50;
