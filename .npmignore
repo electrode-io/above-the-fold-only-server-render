@@ -27,3 +27,9 @@ webpack*
 
 .idea/
 
+.babelrc
+.flowconfig
+gulpfile.js
+LICENSE
+/src
+
