@@ -8,7 +8,7 @@ A React component for optionally skipping server side rendering of components ou
 
 `AboveTheFoldOnlyServerRender` helps increase performance both by decreasing the load on `renderToString` and sending the end user a smaller amount of markup.
 
-The following table outlines a clear performance increase in the `example` app by skipping server rendering on the [Walmart.com](walmart/com) `Footer` component and several other below the fold zones:
+The following table outlines a clear performance increase in the `example` app by skipping server rendering on the [Walmart.com](https://www.walmart.com/) `Footer` component and several other below the fold zones:
 
 |          | HTML Size      | renderToString Time |
 | -------- | -------------- | ------------------- |
